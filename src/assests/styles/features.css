@@ -1,0 +1,50 @@
+.features {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .feature-section {
+    padding: 20px 80px;
+  }
+
+
+  .feature-card {
+    width: 30%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .feature-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #000;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+.feature-text {
+  padding: 10px;
+}
+
+.feature-heading h2 {
+  width:60%;
+  font-size:2.5rem;
+}
+
+.feature-heading p {
+  width: 60%;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  font-size: 1rem;
+}

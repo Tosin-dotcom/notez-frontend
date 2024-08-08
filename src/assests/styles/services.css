@@ -1,0 +1,39 @@
+.services-section {
+    padding: 30px 80px 30px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .services-content {
+    max-width: 50%;
+  }
+  
+  .services-content h5 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .services-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .services-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .services-image {
+    max-width: 45%;
+  }
+  
+  .services-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  

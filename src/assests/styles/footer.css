@@ -1,0 +1,139 @@
+.footer-section {
+    padding: 30px 80px 30px 80px;;
+}
+
+.footer-hero {
+    background-image: url('../images/footer-image2.jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer-hero-content {
+    max-width: 50%;
+  }
+  
+  .footer-hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-cta-container {
+    display: flex;
+    gap: 0.875rem;
+  }
+  
+  .footer-cta-btn {
+    font-size: 0.875rem;
+    
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-primary-btn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+  }
+  
+  .footer-primary-btn:hover {
+    color: #000;
+    background-color: #f1f1f1;
+  }
+  
+  .footer-secondary-btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  .footer-secondary-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .footer-hero-image {
+    max-width: 40%;
+  }
+  
+  .footer-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .footer {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    max-width: 20%;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-column p, .footer-column ul, .footer-column input {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-column input {
+    padding: 10px;
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .footer-subscribe-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
