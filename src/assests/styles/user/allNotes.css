@@ -1,0 +1,21 @@
+
+.allNotes {
+    display: flex;
+    height: 100vh;
+}
+
+.allNotesMain {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.notes {
+    padding: 30px;
+    background-color: #f7f8fa;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+}

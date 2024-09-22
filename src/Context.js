@@ -5,6 +5,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
     const [errorMessage, setErrorMessage] = useState(null)
+    const [successMessage, setSuccessMessage] = useState(null)
 
     const [isAuthenticated, setIsAuthenticated] = useState(
         () => JSON.parse(localStorage.getItem('isAuthenticated')) || false
@@ -17,7 +18,7 @@ const AppProvider = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{ errorMessage, setErrorMessage, isAuthenticated, setIsAuthenticated }}>
+        <AppContext.Provider value={{ errorMessage, setErrorMessage, isAuthenticated, setIsAuthenticated, successMessage, setSuccessMessage }}>
           {children}
         </AppContext.Provider>
     )

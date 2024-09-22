@@ -1,0 +1,30 @@
+.note-section {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  
+  .note-title {
+    display: inline;
+    font-size: 1.5rem;
+  }
+  
+  .note-icons {
+    display: flex; 
+    gap: 10px; 
+  }
+  
+  .note-icon {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  

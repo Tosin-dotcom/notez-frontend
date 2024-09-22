@@ -1,10 +1,18 @@
+import SideNav from "../layout/SideNav"
+import "../../assests/styles/user/dashboard.css"
+
 
 const Dashboard = () => {
     
     return (
-        <section className="userDashboard">
+        <section className="user-dashboard">
 
-            <h1>UserDashboard</h1>
+            < SideNav />
+
+            <div className="user-main-content">
+                <h1>Dashboard</h1>
+            </div>
+
         </section>
     )
 }

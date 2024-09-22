@@ -5,7 +5,9 @@ const AppRoutes = {
     contact: "/contact",
     login: "/auth/login",
     register: "/auth/register",
-    userDashBoard: "/user"
+    userDashBoard: "/user",
+    createNote : "/user/create-note",
+    allNotes : "/user/notes"
   };
   
 export default AppRoutes;

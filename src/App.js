@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MainRoutes from './routes';
 import ErrorBar from './components/commons/ErrorBar';
+import SuccessBar from './components/commons/SuccessBar';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   
     <div>
       <ErrorBar />
+      <SuccessBar />
       <MainRoutes />
     </div>
   );

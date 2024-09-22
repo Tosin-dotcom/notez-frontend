@@ -1,0 +1,12 @@
+.edit-note {
+    display: flex;
+    height: 100vh;
+
+}
+
+.edit-note-main {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #fff;
+    overflow-y: auto;
+}
