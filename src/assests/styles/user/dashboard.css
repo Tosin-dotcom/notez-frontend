@@ -1,12 +1,49 @@
 .user-dashboard {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 .user-main-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #fff;
-    overflow-y: auto;
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
 }
 
+
+
+.user-dashboard-main {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+
+.dashboard-quick-action-button {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px;
+
+}
+
+
+.dashboard-quick-action-button button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+
+.dashboard-statistic {
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px;
+}

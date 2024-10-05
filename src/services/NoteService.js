@@ -74,6 +74,21 @@ const NoteService = {
       throw err.response ? err.response.data : new Error("Network error");
     }
   },
+
+
+  summary: async () => {
+    try {
+      const response = await api.get('/note/summary', {
+        ...withAuthHeaders(),
+      })
+      return response.data;
+    } catch (err) {
+      throw err.response ? err.response.data : new Error("Network error")
+    }
+  }
+
+
+  
 };
 
 export default NoteService;
