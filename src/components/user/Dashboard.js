@@ -4,8 +4,10 @@ import Note from "./Note";
 import AppRoutes from "../../routes/RouterConfig";
 import useGetNoteSummary from "../../hooks/note/useGetNoteSummary";
 import { useEffect } from "react";
-
 import moment from "moment";
+import NavBar from "../layout/NavBar";
+
+
 
 const Dashboard = () => {
   const { getNoteSummary, data, loading } = useGetNoteSummary();
@@ -17,6 +19,7 @@ const Dashboard = () => {
   if (loading) {
     return (
       <section className="user-dashboard">
+        <NavBar />
         <SideNav />
 
         <div className="user-main-content">
@@ -34,6 +37,7 @@ const Dashboard = () => {
 
   return (
     <section className="user-dashboard">
+      <NavBar />
       <SideNav />
 
       <div className="user-main-content">

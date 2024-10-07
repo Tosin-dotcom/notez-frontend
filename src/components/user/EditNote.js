@@ -4,6 +4,8 @@ import NoteForm from "./NoteForm";
 import useGetNoteById from "../../hooks/note/useGetNoteById";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import NavBar from "../layout/NavBar";
+
 
 const EditNote = () => {
   const { id } = useParams();
@@ -16,6 +18,7 @@ const EditNote = () => {
   if (loading) {
     return (
       <section className="edit-note">
+        <NavBar />
         <SideNav />
 
         <div className="edit-note-main">
@@ -27,6 +30,7 @@ const EditNote = () => {
 
   return (
     <section className="edit-note">
+      <NavBar />
       <SideNav />
 
       <div className="edit-note-main">

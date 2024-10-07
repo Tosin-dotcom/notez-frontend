@@ -5,16 +5,17 @@ import useGetAllNotes from "../../hooks/note/useGetAllNotes";
 import { useEffect, useState } from "react";
 import Pagination from "../layout/Pagination";
 import useDeleteNote from "../../hooks/note/useDeleteNote";
-
+import NavBar from "../layout/NavBar";
 
 
 const AllNotes = () => {
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const size = 3;
 
   const { getAllNotes, data, loading, totalSize } = useGetAllNotes();
-  const { deleteNote } = useDeleteNote()
+  const { deleteNote } = useDeleteNote();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,17 +29,19 @@ const AllNotes = () => {
     const success = await deleteNote(id);
     if (success) {
       closeModal();
-      window.location.reload()
+      window.location.reload();
     }
   };
 
+
   useEffect(() => {
-    getAllNotes(page, size);
-  }, [page]);
+    getAllNotes(page, size, search);
+  }, [page, search]);
 
   if (loading) {
     return (
       <section className="allNotes">
+        <NavBar />
         <SideNav />
         <div className="allNotesMain">
           <div className="loading">Loading notes...</div>
@@ -50,8 +53,19 @@ const AllNotes = () => {
   if (data.length === 0) {
     return (
       <section className="allNotes">
+        <NavBar />
         <SideNav />
         <div className="allNotesMain">
+
+        <h1>All Notes</h1>
+          <input
+            className="search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            type="search"
+            placeholder="Enter Search item"
+          />
+
           <div className="loading">No notes yet</div>
         </div>
       </section>
@@ -60,9 +74,18 @@ const AllNotes = () => {
 
   return (
     <section className="allNotes">
+      <NavBar />
       <SideNav />
       <div className="allNotesMain">
         <h1>All Notes</h1>
+
+        <input
+            className="search-input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            type="search"
+            placeholder="Enter Search item"
+          />
 
         <div className="notes">
           {data.map((note) => (
@@ -75,8 +98,7 @@ const AllNotes = () => {
               modal={isModalOpen}
               openModal={openModal}
               closeModal={closeModal}
-
-              />
+            />
           ))}
         </div>
 

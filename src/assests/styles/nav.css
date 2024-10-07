@@ -55,3 +55,8 @@
   background-color: #000;
   color: #fff;
 }
+
+.auth-section {
+
+  display: flex;
+}

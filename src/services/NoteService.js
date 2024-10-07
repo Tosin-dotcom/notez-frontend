@@ -26,11 +26,11 @@ const NoteService = {
     }
   },
 
-  getAllNotes: async (page, size) => {
+  getAllNotes: async (page, size, search) => {
     try {
       const response = await api.get("/note", {
         ...withAuthHeaders(),
-        params: { page, size },
+        params: { page, size, search },
       });
       return response.data;
     } catch (error) {

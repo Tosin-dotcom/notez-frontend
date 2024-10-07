@@ -9,9 +9,9 @@ const useGetAllNotes = () => {
 
   const { setErrorMessage } = useGlobalContext();
 
-  const getAllNotes = async (page, size) => {
+  const getAllNotes = async (page, size, search) => {
     try {
-      const response = await NoteService.getAllNotes(page, size);
+      const response = await NoteService.getAllNotes(page, size, search);
       const { body } = response;
       setData(body.records);
       setTotalSize(body.total)

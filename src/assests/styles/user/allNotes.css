@@ -6,7 +6,7 @@
 
 .allNotesMain {
     flex-grow: 1;
-    padding: 15px;
+    padding: 70px 15px;
     background-color: #fff;
     overflow-y: auto;
 }
@@ -18,4 +18,14 @@
     grid-template-columns: auto auto auto;
     column-gap: 20px;
     row-gap: 20px;
+}
+
+
+.search-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
 }

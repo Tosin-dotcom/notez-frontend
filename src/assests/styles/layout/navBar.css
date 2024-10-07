@@ -1,0 +1,97 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 10px 0;
+  box-shadow: 0px 4px 2px -2px gray;
+  z-index: 1000;
+}
+
+.nav-bar-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.nav-bar-link {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-user-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.user-icon {
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.user-section-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 200px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.user-section-dropdown p {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.user-section-dropdown a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.user-section-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.user-section-dropdown a.logout {
+  color: red;
+}
+
+.logoutt {
+ color: red;
+ width: 100%;
+ padding-top: 8px;
+ padding-bottom: 8px;
+ padding-left: 0;
+ padding-right: 0;
+ 
+ /* padding: 8px 10px; */
+ border-radius: 4px;
+ background: none;
+ border: none;
+ cursor: pointer;
+ font-size: 16px;
+}
+
+.logoutt:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
