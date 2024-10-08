@@ -1,13 +1,15 @@
 import "../../assests/styles/layout/navBar.css";
 import AppRoutes from "../../routes/RouterConfig";
 import UserDropdown from "./UserDropDown";
+import Logo from '../../assests/images/logo.png'
+
 
 const NavBar = () => {
   return (
     <header className="nav-bar">
       <nav className="nav-bar-container">
         <div className="nav-bar-logo">
-          <h2>Logo</h2>
+          <a href={AppRoutes.home}><img src={Logo} className="app-logo" alt="Logo"/></a>
         </div>
 
         <div className="nav-bar-link">

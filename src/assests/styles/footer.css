@@ -4,8 +4,8 @@
 
 .footer-hero {
     background-image: url('../images/footer-image2.jpg');
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-position: center; /* Centers the image */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat; 
     color: #fff;
     padding: 40px;

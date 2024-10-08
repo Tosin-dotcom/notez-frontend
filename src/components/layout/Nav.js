@@ -2,8 +2,10 @@ import "../../assests/styles/nav.css";
 import { Link } from "react-router-dom";
 import AppRoutes from "../../routes/RouterConfig";
 import UserDropdown from "./UserDropDown";
-
 import { useGlobalContext } from "../../Context";
+import logo from '../../assests/images/logo.png'
+
+
 
 const Nav = () => {
   const { isAuthenticated } = useGlobalContext();
@@ -11,7 +13,7 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <ul className="nav-links">
-        <li className="logo">Logo</li>
+        <li className="logo"><img src={logo} alt="Logo"/></li>
         <li className="nav-link">Home</li>
         <li className="nav-link">About</li>
         <li className="nav-link">Services</li>
