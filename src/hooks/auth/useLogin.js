@@ -8,7 +8,7 @@ const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
 
-  const { setErrorMessage, setIsAuthenticated, setSuccessMessage } = useGlobalContext()
+  const { setErrorMessage, setIsAuthenticated, showSuccessMessage } = useGlobalContext()
 
   const login = async (loginObject) => {
     setLoading(true);
@@ -19,7 +19,7 @@ const useLogin = () => {
       setIsAuthenticated(true)
       localStorage.setItem("token", body.token);
       localStorage.setItem("user", JSON.stringify(body.user));
-      setSuccessMessage("Login Successful")
+      showSuccessMessage("Login Successful")
       return true
     } catch (err) {
       setErrorMessage(err.body);

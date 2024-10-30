@@ -7,7 +7,7 @@ const useCreateNote = () => {
 
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true);
-    const { setErrorMessage, setSuccessMessage } = useGlobalContext()
+    const { setErrorMessage, showSuccessMessage } = useGlobalContext()
 
     const createNote = async(note) => {
 
@@ -15,7 +15,7 @@ const useCreateNote = () => {
             const response = await NoteService.createNote(note)
             const { body } = response
             setData(body)
-            setSuccessMessage("Note created successfully")
+            showSuccessMessage("Note Created Successfully")
             return body
         } catch (err) {
             setErrorMessage(err.body)

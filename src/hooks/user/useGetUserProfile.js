@@ -6,14 +6,14 @@ import UserService from '../../services/UserService'
 const useGetUserProfile = () => {
 
     const [data, setData] = useState(null)
-    const { setErroMessage } = useGlobalContext()
+    const { setErrorMessage } = useGlobalContext()
     const getUserProfile = async () => {
         try {
             const response = await UserService.userProfile()
             const { body } = response
             setData(body)
         } catch (err) {
-            setErroMessage(err.body)
+            setErrorMessage(err.body)
         } 
     }
 

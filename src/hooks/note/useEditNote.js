@@ -5,14 +5,14 @@ import NoteService from "../../services/NoteService";
 const useEditNote = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { setErrorMessage, setSuccessMessage } = useGlobalContext();
+  const { setErrorMessage, showSuccessMessage } = useGlobalContext();
 
   const editNote = async (note) => {
     try {
       const response = await NoteService.editNote(note);
       const { body } = response;
       setData(body);
-      setSuccessMessage("Note edited successfully");
+      showSuccessMessage("Note edited successfully")
       return true;
     } catch (err) {
       setErrorMessage(err.body);

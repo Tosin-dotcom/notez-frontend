@@ -7,6 +7,12 @@ const AppProvider = ({ children }) => {
     const [errorMessage, setErrorMessage] = useState(null)
     const [successMessage, setSuccessMessage] = useState(null)
 
+
+    const showSuccessMessage = (message) => {
+        setSuccessMessage(message)
+        setTimeout(() => setSuccessMessage(null), 1000); 
+    };
+
     const [isAuthenticated, setIsAuthenticated] = useState(
         () => JSON.parse(localStorage.getItem('isAuthenticated')) || false
       );
@@ -18,7 +24,7 @@ const AppProvider = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{ errorMessage, setErrorMessage, isAuthenticated, setIsAuthenticated, successMessage, setSuccessMessage }}>
+        <AppContext.Provider value={{ errorMessage, setErrorMessage, isAuthenticated, setIsAuthenticated, successMessage, showSuccessMessage }}>
           {children}
         </AppContext.Provider>
     )

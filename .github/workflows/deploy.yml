@@ -1,0 +1,58 @@
+name: Deploy React Application to ECS
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Step 3: Log in to Amazon ECR
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com"
+
+      # Step 4: Extract version from package.json or similar
+      - name: Extract version
+        run: |
+          VERSION=$(jq -r .version package.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      # Step 5: Build, tag, and push Docker image
+      - name: Build and push Docker image to ECR
+        run: |
+          IMAGE_URI="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/notez/notez_frontend"
+          docker build -t "$IMAGE_URI:$VERSION" .
+          docker tag "$IMAGE_URI:$VERSION" "$IMAGE_URI:latest"
+          docker push "$IMAGE_URI:$VERSION"
+          docker push "$IMAGE_URI:latest"
+
+      # # Step 6: Deploy to ECS
+      # - name: Deploy to ECS
+      #   env:
+      #     VERSION: ${{ env.VERSION }}
+      #   run: |
+      #     CLUSTER_NAME="your-ecs-cluster-name"
+      #     SERVICE_NAME="your-ecs-service-name"
+      #     TASK_FAMILY="your-task-definition-name"
+      #     CONTAINER_NAME="react-frontend" # Ensure this matches your ECS container name
+
+      #     # Create a new task definition revision with the updated image
+      #     aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --force-new-deployment
