@@ -14,6 +14,9 @@ const useGetUserProfile = () => {
             setData(body)
         } catch (err) {
             setErrorMessage(err.body)
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+            localStorage.removeItem("isAuthenticated")
         } 
     }
 

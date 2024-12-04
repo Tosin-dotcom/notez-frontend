@@ -7,7 +7,8 @@ const AppRoutes = {
     register: "/auth/register",
     userDashBoard: "/user",
     createNote : "/user/create-note",
-    allNotes : "/user/notes"
+    allNotes : "/user/notes",
+    files : "/user/files"
   };
   
 export default AppRoutes;

@@ -1,5 +1,5 @@
 import "../../assests/styles/note/sideNavBar.css";
-import { FaHome, FaBook, FaCog, FaPlus } from "react-icons/fa";
+import { FaHome, FaBook, FaCog, FaPlus,FaFile } from "react-icons/fa";
 import AppRoutes from "../../routes/RouterConfig";
 
 const SideNav = () => {
@@ -29,11 +29,21 @@ const SideNav = () => {
           </li>
         </a>
 
+
+        <a href={AppRoutes.files}>
+          <li className="side-nav-item">
+            <FaFile className="side-nav-icon" />
+            <span>Files</span>
+          </li>
+        </a>
+
         <li className="side-nav-item">
           <FaCog className="side-nav-icon" />
           <span>Settings</span>
         </li>
       </ul>
+
+
     </section>
   );
 };

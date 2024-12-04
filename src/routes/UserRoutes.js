@@ -6,6 +6,7 @@ import CreateNotePage from '../pages/user/CreateNotePage';
 import AllNotesPage from '../pages/user/AllNotesPage';
 import NoteDetailPage from '../pages/user/NoteDetailPage';
 import EditNotePage from '../pages/user/EditNotePage';
+import FilePage from '../pages/user/FilePage';
 
 
 const UserRoutes = () => (
@@ -16,6 +17,8 @@ const UserRoutes = () => (
     <Route path="/notes" element={<ProtectedRoute> <AllNotesPage /> </ProtectedRoute>}/>
     <Route path='/note/:id' element={<ProtectedRoute> <NoteDetailPage /> </ProtectedRoute>}/>
     <Route path='/edit-note/:id' element={<ProtectedRoute> <EditNotePage /> </ProtectedRoute>} />
+    <Route path='/files' element={<ProtectedRoute> <FilePage /> </ProtectedRoute>} />
+    
     
   </Routes>
   
