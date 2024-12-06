@@ -46,7 +46,70 @@
   background-color: #357ae8;
 }
 
-
-.file-list {
+.files-list {
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.file-preview-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.file-preview-image,
+.file-preview-video,
+.file-preview-audio,
+.file-preview-pdf {
+  width: 100%;
+  height: 200px;
+  /* height: auto; */
+  object-fit: cover;
+}
+
+
+
+.file-preview-header {
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.file-preview-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.file-preview-body {
+  margin: 0px;
+}
+
+.file-delete-btn {
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+
+@media (max-width: 768px) {
+  .files-list {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .files-list {
+    grid-template-columns: 1fr;
+  }
 }

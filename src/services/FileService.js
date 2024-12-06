@@ -36,6 +36,18 @@ const FileService = {
       throw error.response ? error.response.data : new Error("Network error");
     }
   },
+
+  deleteFile : async (id) => {
+    try {
+      const response = await api.delete(`/file/${id}`, {
+        ...withAuthHeaders(),
+      });
+      return response.data;
+    } catch (error) {
+      throw error.response ? error.response.data : new Error("Network error");
+    }
+
+  }
 };
 
 export default FileService;

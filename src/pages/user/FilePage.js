@@ -1,4 +1,4 @@
-import Files from "../../components/user/Files"
+import Files from "../../components/file/Files"
 
 const FilePage = () => {
 
