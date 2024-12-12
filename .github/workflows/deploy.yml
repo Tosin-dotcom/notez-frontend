@@ -44,15 +44,11 @@ jobs:
           docker push "$IMAGE_URI:$VERSION"
           docker push "$IMAGE_URI:latest"
 
-      # # Step 6: Deploy to ECS
-      # - name: Deploy to ECS
-      #   env:
-      #     VERSION: ${{ env.VERSION }}
-      #   run: |
-      #     CLUSTER_NAME="your-ecs-cluster-name"
-      #     SERVICE_NAME="your-ecs-service-name"
-      #     TASK_FAMILY="your-task-definition-name"
-      #     CONTAINER_NAME="react-frontend" # Ensure this matches your ECS container name
-
-      #     # Create a new task definition revision with the updated image
-      #     aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --force-new-deployment
+      # Step 6: Update ECS service to use the latest image
+      - name: Update ECS Service
+        run: |
+          aws ecs update-service \
+            --cluster NotezFrontendCluster \
+            --service NotezFrontendService \
+            --force-new-deployment
+            
